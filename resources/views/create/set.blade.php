@@ -14,15 +14,15 @@
 
     </script>
 
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">Edit</h3> <small></small>
+    <div class="card card-primary card-outline">
+        <div class="card-header with-border">
+            <h3 class="card-title">Edit</h3> <small></small>
         </div>
 
 
         <form class="form-horizontal" method="post" action="{{ route('redis-store-key') }}" pjax-container>
 
-            <div class="box-body">
+            <div class="card-body">
 
                 <div class="form-group">
                     <label for="inputKey" class="col-sm-2 control-label">Key</label>
@@ -56,7 +56,7 @@
 
             </div>
 
-            <div class="box-footer">
+            <div class="card-footer">
                 <button type="reset" class="btn btn-default pull-right">Reset</button>
                 <button class="btn btn-info col-sm-offset-2">Submit</button>
             </div>
@@ -64,6 +64,6 @@
         </form>
 
     </div>
-    <!-- /.box-body -->
+    <!-- /.card-body -->
 
 @endsection

@@ -115,23 +115,23 @@
 
     </script>
 
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">Redis Console</h3> <small></small>
+    <div class="card card-primary card-outline">
+        <div class="card-header with-border">
+            <h3 class="card-title">Redis Console</h3> <small></small>
         </div>
 
-        <div class="box-body chat" id="console-box"></div>
+        <div class="card-body chat" id="console-box"></div>
 
-        <div class="box-footer with-border">
+        <div class="card-footer with-border">
             <div class="input-group">
 
                 <input class="form-control input-lg" id="console-query" placeholder="Type command">
 
-                <div class="input-group-btn">
+                <div class="input-group-append">
                     <button type="button" class="btn btn-primary btn-lg" id="console-send"><i class="fa fa-paper-plane"></i></button>
                 </div>
 
-                <div class="input-group-btn">
+                <div class="input-group-append">
                     <button type="button" class="btn btn-warning btn-lg" id="console-clear"><i class="fa fa-trash"></i></button>
                 </div>
             </div>

@@ -2,13 +2,13 @@
 
 @section('page')
 
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title">Edit</h3> <small></small>
+<div class="card card-primary card-outline">
+    <div class="card-header with-border">
+        <h3 class="card-title">Edit</h3> <small></small>
     </div>
 
     <form class="form-horizontal" method="post" action="{{ route('redis-update-key') }}" pjax-container>
-        <div class="box-body">
+        <div class="card-body">
             <div class="form-group">
                 <label for="inputKey" class="col-sm-2 control-label">Key</label>
 
@@ -36,9 +36,9 @@
             <input type="hidden" name="type" value="string">
             <input type="hidden" name="_method" value="put">
         </div>
-        <!-- /.box-body -->
+        <!-- /.card-body -->
 
-        <div class="box-footer">
+        <div class="card-footer">
 
             <div class="col-sm-offset-2">
             <button type="reset" class="btn btn-default pull-right">Reset</button>
@@ -49,6 +49,6 @@
     </form>
 
 </div>
-<!-- /.box-body -->
+<!-- /.card-body -->
 
 @endsection

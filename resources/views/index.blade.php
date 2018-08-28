@@ -2,18 +2,18 @@
 
 @section('page')
 
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title">{{ $conn }}</h3> <small></small>
+<div class="card card-primary card-outline">
+    <div class="card-header with-border">
+        <h3 class="card-title">{{ $conn }}</h3> <small></small>
 
-        <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+        <div class="card-tools pull-right">
+            <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i></button>
         </div>
     </div>
 
     <form class="form-horizontal" action="{{ route('redis-index') }}" pjax-container>
-        <div class="box-body">
+        <div class="card-body">
             <div class="form-group">
                 <label for="inputPattern" class="col-sm-2 control-label">Pattern</label>
 
@@ -28,7 +28,7 @@
 
                     <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
 
-                    <a class="btn btn-danger btn-sm pull-right key-delete-multi"><i class="fa fa-trash"></i>&nbsp;&nbsp;Delete</a>
+                    <a class="btn btn-danger btn-sm pull-right key-delete-multi" href="#"><i class="fa fa-trash"></i>&nbsp;&nbsp;Delete</a>
 
                     <a class="btn btn-warning btn-sm pull-right"  style="margin-right: 5px;" href="{{ route('redis-console', ['conn' => $conn]) }}"><i class="fa fa-terminal"></i>&nbsp;&nbsp;Console</a>
 
@@ -39,24 +39,24 @@
                             <span class="sr-only">Toggle Dropdown</span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'string']) }}">string</a></li>
-                            <li><a href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'list']) }}">list</a></li>
-                            <li><a href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'hash']) }}">hash</a></li>
-                            <li><a href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'set']) }}">set</a></li>
-                            <li><a href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'zset']) }}">zset</a></li>
+                            <li><a class="dropdown-item" href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'string']) }}">string</a></li>
+                            <li><a class="dropdown-item" href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'list']) }}">list</a></li>
+                            <li><a class="dropdown-item" href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'hash']) }}">hash</a></li>
+                            <li><a class="dropdown-item" href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'set']) }}">set</a></li>
+                            <li><a class="dropdown-item" href="{{ route('redis-create-key', ['conn' => $conn, 'type' => 'zset']) }}">zset</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- /.box-footer -->
+        <!-- /.card-footer -->
     </form>
 
     <hr class="no-margin">
 
-    <!-- /.box-header -->
-    <div class="box-body table-responsive">
+    <!-- /.card-header -->
+    <div class="card-body table-responsive">
 
         <table class="table table-hover">
             <thead>
@@ -75,7 +75,7 @@
                     <td><code>{{ $key[0] }}</code></td>
                     <td>
                         @php($type = $key[1]->getPayload())
-                            <span class="label label-{{ \Encore\Admin\RedisManager\RedisManager::$typeColor[$type] }}">{{ $type }}</span>
+                            <span class="badge bg-{{ \Encore\Admin\RedisManager\RedisManager::$typeColor[$type] }}">{{ $type }}</span>
                     </td>
                     <td>{{ $key[2] }}</td>
                     <td>
@@ -96,7 +96,7 @@
         @endif
 
     </div>
-    <!-- /.box-body -->
+    <!-- /.card-body -->
 </div>
 
 <script>
